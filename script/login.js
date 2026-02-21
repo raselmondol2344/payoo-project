@@ -12,7 +12,7 @@ document.getElementById("login-btn").addEventListener("click", function()
     if(Number == "01703114263" && pin == "1234")
     {
         alert (" login success")
-        window.location.assign("/home.html");
+        window.location.href = "./home.html";
     }
 
     else {

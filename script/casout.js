@@ -13,12 +13,10 @@ document.getElementById("cashout-btn").addEventListener("click", function()
 
     const cashoutAmount = getElementByInput("cashout-amount")
 
-        // 3- get current blance
-    const blanceElement = document.getElementById("blance")
-    const Blance = blanceElement.innerText;
-    console.log(Blance);
+    // 3- get current blance
+   const currentBlance = getBlance ();
     // 4- claculate new blance
-    const newBlance = Number(Blance) - Number (cashoutAmount);
+    const newBlance = currentBlance - Number (cashoutAmount);
 
     if(newBlance < 0)
     {
@@ -32,13 +30,14 @@ document.getElementById("cashout-btn").addEventListener("click", function()
     if(pin == "1234")
     {   // 5.1 : true :: alert > set blance 
         alert("cashout successful")
-        blanceElement.innerText = newBlance;
+        setBlance(newBlance);
     }
     else{
         // 5.2 : false :: aleert > return
         alert("invalid pin")
+        return;
     }
-    console.log(pin);
+ 
 
 
         
